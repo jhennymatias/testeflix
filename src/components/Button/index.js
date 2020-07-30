@@ -20,3 +20,5 @@ const Button = styled.a`
     opacity: .5;
   }
 `
+
+export default Button;

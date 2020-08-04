@@ -8,8 +8,13 @@
         "text": "Noções básicas de teste de unidade",
         "url": "https://docs.microsoft.com/pt-br/visualstudio/test/unit-test-basics?view=vs-2019"
       }
+    },
+    {
+      "id": 2,
+      "titulo": "Teste de integração",
+      "descricao": "Entre os principais tipos de teste de software está o teste de integração. A finalidade dele é analisar o comportamento do software quando interage com outras aplicações ou processos.",
+      "cor": "#ffc800"
     }
-   
   ],
   "videos": [
     {
@@ -17,6 +22,18 @@
       "categoriaId": 1,
       "titulo": "Gerência e Qualidade de Software - Aula 08 - Teste de unidade",
       "url": "https://www.youtube.com/watch?v=b_i8uLbchkw"
+    },
+    {
+      "titulo": "Testes no NodeJS aplicando TDD com Jest | Diego Fernandes",
+      "url": "https://www.youtube.com/watch?v=2G_mWfG0DZE&t=155s",
+      "categoriaId": 1,
+      "id": 2
+    },
+    {
+      "titulo": "TDD com Node #02 - Fazendo Testes Unitários",
+      "url": "https://www.youtube.com/watch?v=sriFBrihF9M",
+      "categoriaId": 1,
+      "id": 3
     }
   ]
 }

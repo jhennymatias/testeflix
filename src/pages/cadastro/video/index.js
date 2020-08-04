@@ -11,13 +11,12 @@ function CadastroVideo() {
   const history = useHistory();
   const [categorias, setCategorias] = useState([]);
   const categoryTitles = categorias.map(({ titulo }) => titulo);
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState('Teste de Unidade');
   const { handleChange, values } = useForm({
     titulo: '',
     url: '',
     categoria: '',
   });
-
   useEffect(() => {
     categoriasRepository
       .getAll()
@@ -63,7 +62,8 @@ function CadastroVideo() {
           onChange={handleChange}
         />
       <div>
-        <select style={
+        <select 
+        style={
           {
           width: '100%',
           background: '#53585D',
@@ -84,9 +84,12 @@ function CadastroVideo() {
         } value={result} onChange={e => setResult(e.target.value)}> 
         {categorias.map((categoria) => (
           <option 
-          key={`${categoria.titulo}`} 
-          value={categoria.titulo}> 
+          key={`${categoria.titulo}`}
+         value={categoria.titulo}
+         selected
+         > 
             {categoria.titulo}
+          
           </option>
           ))}
         </select>

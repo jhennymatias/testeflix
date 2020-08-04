@@ -1,50 +1,46 @@
 {
   "categorias": [
     {
-      "titulo": "Front End",
-      "link": "https://www.alura.com.br/formacao-front-end",
+      "titulo": "Teste Unitário",
+      "link": "https://www.devmedia.com.br/exemplo/documentacao-teste-unitario/84",
       "cor": "#6BD1FF",
       "link_extra": {
-        "text": "Formação de Front End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
+        "text": "Documentação Teste Unitário",
+        "url": "https://www.devmedia.com.br/exemplo/documentacao-teste-unitario/84"
       },
       "videos": [
         {
           "titulo": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+          "url": "https://www.youtube.com/watch?v=fxL04i00jJw"
         },
         {
-          "titulo": "SEO com React",
-          "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+          "titulo": "Escrevendo seus PRIMEIROS TESTES UNITÁRIOS",
+          "url": "https://www.youtube.com/watch?v=G8SNRbZSRNw&t=2s"
         },
         {
-          "titulo": "Componentização com VanillaJS #AluraMais",
-          "url": "https://www.youtube.com/watch?v=LatCKpcOMak"
+          "titulo": "Alura: Curso de Jasmine: Testes automatizados em JavaScript - Aula 1",
+          "url": "https://www.youtube.com/watch?v=u9dD93mj9U4"
         },
         {
-          "titulo": "Pare de chutar e aprenda a display: inline #01",
-          "url": "https://www.youtube.com/watch?v=5PS6ku8NzIE"
+          "titulo": "Live de Python #75 - Testes de unidade",
+          "url": "https://www.youtube.com/watch?v=Sr9lUR1COpU"
         },
         {
-          "titulo": "Template String: Interpolando strings com JavaScript #AluraMais",
-          "url": "https://www.youtube.com/watch?v=ORI_HTXaIw0"
+          "titulo": "Gerência e Qualidade de Software - Aula 08 - Teste de unidade",
+          "url": "https://www.youtube.com/watch?v=b_i8uLbchkw"
         },
         {
-          "titulo": "Qual é a melhor linguagem de programação? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=Uh-GNH-t89w"
+          "titulo": "5 maneiras de aplicar ou otimizar seus Testes de Unidade",
+          "url": "https://www.youtube.com/watch?v=oIMsTXRN8Qg"
         },
         {
-          "titulo": "Novidades do Angular v9",
-          "url": "https://www.youtube.com/watch?v=34uHo7hFmG0"
-        },
-        {
-          "titulo": "Base para aprender os frameworks",
-          "url": "https://www.youtube.com/watch?v=QzDjdlF1BQI"
-        }        
+          "titulo": "TDD (Test Driven Development) // Dicionário do Programador",
+          "url": "https://www.youtube.com/watch?v=bLdEypr2e-8"
+        }
       ]
     },
     {
-      "titulo": "Back End",
+      "titulo": "Teste de Integração",
       "cor": "#00C86F",
       "link_extra": {
         "text": "Cursos de Back End na Alura",
@@ -52,8 +48,8 @@
       },
       "videos": [
         {
-          "titulo": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
-          "url": "https://www.youtube.com/watch?v=UOK7nS2E9xM"
+          "titulo": "Node js | 3 Maneiras de lidar com serviços externos em testes de integração | Jest Mocks",
+          "url": "https://www.youtube.com/watch?v=l4v2cMviTaQ"
         },
         {
           "titulo": "Coders4Tips - S01E04: GitHub CLI - Uma Nova Experiência no Github!",

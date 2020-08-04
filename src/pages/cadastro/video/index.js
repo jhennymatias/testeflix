@@ -3,17 +3,19 @@ import { Link, useHistory } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import useForm from '../../../hooks/useForm';
 import FormField from '../../../components/FormField';
-import Button from '../../../components/Button';
 import videosRepository from '../../../repositories/Video';
 import categoriasRepository from '../../../repositories/categorias';
+
+
 function CadastroVideo() {
   const history = useHistory();
   const [categorias, setCategorias] = useState([]);
   const categoryTitles = categorias.map(({ titulo }) => titulo);
+  const [result, setResult] = useState('');
   const { handleChange, values } = useForm({
-    titulo: 'Video padrão',
-    url: 'https://www.youtube.com/watch?v=jOAU81jdi-c',
-    categoria: 'Front End',
+    titulo: '',
+    url: '',
+    categoria: '',
   });
 
   useEffect(() => {
@@ -30,10 +32,10 @@ function CadastroVideo() {
 
       <form onSubmit={(event) => {
         event.preventDefault();
-        // alert('Video Cadastrado com sucesso!!!1!');
+        alert('Video Cadastrado com Sucesso!');
 
         const categoriaEscolhida = categorias.find((categoria) => {
-          return categoria.titulo === values.categoria;
+          return categoria.titulo ===  result;
         });
 
         videosRepository.create({
@@ -60,26 +62,49 @@ function CadastroVideo() {
           value={values.url}
           onChange={handleChange}
         />
-
-        <FormField
-          label="Categoria"
-          name="categoria"
-          value={values.categoria}
-          onChange={handleChange}
-          suggestions={categoryTitles}
-        />
-
-        <Button type="submit">
+      <div>
+        <select style={
+          {
+          width: '100%',
+          background: '#53585D',
+          color: '#F5F5F5',
+          display: 'block',
+          height: '57px',
+          fontsize: '18px',
+          outline: 0,
+          border: 0,
+          borderTop: '4px solid transparent',
+          borderBottom: '4px solid #53585D',
+          padding: '16px 16px',
+          marginBottom: '40px',
+          resize: 'none',
+          borderRadius: '4px',
+          transition: 'border-color .3s',
+        }
+        } value={result} onChange={e => setResult(e.target.value)}> 
+        {categorias.map((categoria) => (
+          <option 
+          key={`${categoria.titulo}`} 
+          value={categoria.titulo}> 
+            {categoria.titulo}
+          </option>
+          ))}
+        </select>
+      </div>
+      
+      
+        <button className="btn" type="submit">
           Cadastrar
-        </Button>
+        </button>
+        <Link style={{marginLeft:"12px"}}className="btn" to="/cadastro/categoria">
+        Cadastrar Categoria
+        </Link>
       </form>
 
       <br />
       <br />
 
-      <Link to="/cadastro/categoria">
-        Cadastrar Categoria
-      </Link>
+     
     </PageDefault>
   );
 }

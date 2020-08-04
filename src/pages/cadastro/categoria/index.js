@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
-import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
+import './style.css';
+import categoriasRepository from '../../../repositories/categorias';
 
 function CadastroCategoria() {
   const valoresIniciais = {
-    nome: '',
+    titulo: '',
     descricao: '',
     cor: '',
   };
@@ -17,42 +18,24 @@ function CadastroCategoria() {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
-    const URL_TOP = window.location.hostname.includes('localhost')
+    const URL = window.location.hostname.includes('localhost')
       ? 'http://localhost:8080/categorias'
       : 'https://devsoutinhoflix.herokuapp.com/categorias';
-    // E a ju ama variáveis
-    fetch(URL_TOP)
+
+    fetch(URL)
       .then(async (respostaDoServidor) => {
         const resposta = await respostaDoServidor.json();
         setCategorias([
           ...resposta,
         ]);
       });
-
-    // setTimeout(() => {
-    //   setCategorias([
-    //     ...categorias,
-    //     {
-    //       id: 1,
-    //       nome: 'Front End',
-    //       descricao: 'Uma categoria bacanudassa',
-    //       cor: '#cbd1ff',
-    //     },
-    //     {
-    //       id: 2,
-    //       nome: 'Back End',
-    //       descricao: 'Outra categoria bacanudassa',
-    //       cor: '#cbd1ff',
-    //     },
-    //   ]);
-    // }, 4 * 1000);
   }, []);
 
   return (
     <PageDefault>
       <h1>
         Cadastro de Categoria:
-        {values.nome}
+        {values.titulo}
       </h1>
 
       <form onSubmit={function handleSubmit(infosDoEvento) {
@@ -61,15 +44,23 @@ function CadastroCategoria() {
           ...categorias,
           values,
         ]);
+        let IdCategoria = categorias.length + 1;
+        console.log(IdCategoria)
+        categoriasRepository.createCategoria({
+          id: IdCategoria,
+          titulo: values.titulo,
+          descricao: values.descricao,
+          cor: values.cor,
+        });
 
         clearForm();
       }}
       >
 
         <FormField
-          label="Nome da Categoria"
-          name="nome"
-          value={values.nome}
+          label="titulo da Categoria"
+          name="titulo"
+          value={values.titulo}
           onChange={handleChange}
         />
 
@@ -89,14 +80,13 @@ function CadastroCategoria() {
           onChange={handleChange}
         />
 
-        <Button>
+        <button className="btn">
           Cadastrar
-        </Button>
+        </button>
       </form>
 
       {categorias.length === 0 && (
         <div>
-          {/* Cargando... */}
           Loading...
         </div>
       )}
